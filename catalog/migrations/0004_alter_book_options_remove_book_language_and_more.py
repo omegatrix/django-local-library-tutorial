@@ -6,24 +6,29 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('catalog', '0003_alter_book_options'),
+        ("catalog", "0003_alter_book_options"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='book',
+            name="book",
             options={},
         ),
         migrations.RemoveField(
-            model_name='book',
-            name='language',
+            model_name="book",
+            name="language",
         ),
         migrations.AlterField(
-            model_name='book',
-            name='isbn',
-            field=models.CharField(help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>,', max_length=13, unique=True, verbose_name='ISBN'),
+            model_name="book",
+            name="isbn",
+            field=models.CharField(
+                help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>,',
+                max_length=13,
+                unique=True,
+                verbose_name="ISBN",
+            ),
         ),
         migrations.DeleteModel(
-            name='Language',
+            name="Language",
         ),
     ]
